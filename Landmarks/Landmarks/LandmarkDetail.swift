@@ -29,6 +29,7 @@ struct LandmarkDetail: View {
                 HStack {
                     Text(landmark.name)
                         .font(.title)
+                        .accessibility(identifier: "landmark-detail.text.title")
                     
                     Button(action: {
                         self.userData.landmarks[self.landmarkIndex]
@@ -38,19 +39,24 @@ struct LandmarkDetail: View {
                             .isFavorite {
                             Image(systemName: "star.fill")
                                 .foregroundColor(Color.yellow)
+                                .accessibility(identifier: "landmark-detail.button.image.star-fill")
                         } else {
                             Image(systemName: "star")
                                 .foregroundColor(Color.gray)
+                                .accessibility(identifier: "landmark-detail.button.image.star")
                         }
                     }
+                    .accessibility(identifier: "landmark-detail.button.favorite")
                 }
                 
                 HStack(alignment: .top) {
                     Text(landmark.park)
                         .font(.subheadline)
+                        .accessibility(identifier: "landmark-detail.text.park")
                     Spacer()
                     Text(landmark.state)
                         .font(.subheadline)
+                        .accessibility(identifier: "landmark-detail.text.state")
                 }
             }
             .padding()

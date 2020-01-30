@@ -22,6 +22,7 @@ struct LandmarkRow: View {
                 Image(systemName: "star.fill")
                     .imageScale(.medium)
                     .foregroundColor(.yellow)
+                    .accessibility(identifier: "landmark-row.icon.favourite")
             }
         }
     }

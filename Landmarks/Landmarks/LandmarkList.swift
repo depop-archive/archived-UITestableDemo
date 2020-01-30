@@ -16,6 +16,7 @@ struct LandmarkList: View {
                 Toggle(isOn: $userData.showFavoritesOnly) {
                     Text("Show Favorites Only")
                 }
+                .accessibility(identifier: "landmark-list.switch.favoriteToggle")
                 
                 ForEach(userData.landmarks) { landmark in
                     if !self.userData.showFavoritesOnly || landmark.isFavorite {
@@ -24,6 +25,7 @@ struct LandmarkList: View {
                                 .environmentObject(self.userData)
                         ) {
                             LandmarkRow(landmark: landmark)
+                                .accessibility(identifier: "landmark-list.id.\(landmark.id)")
                         }
                     }
                 }
